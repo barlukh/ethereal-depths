@@ -1,4 +1,4 @@
-## About Ethereal Depths
+## About
 
 **Work in progress.** This project is for practicing Class inheritance in Object Oriented Programming. I also tried to practice separating the code into different modules and importing the modules to different modules.
 
