@@ -1,6 +1,40 @@
-""" Classes for items. """
+""" Blueprint classes for gold (currency) and all items. """
+
+class Gold:
+    """ Default class for gold. """
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __str__(self):
+        return f"{self.amount} gold in the inventory."
+    
+    def __repr__(self):
+        return f"{self.amount}"
+
+class PlayerGold(Gold):
+    """ PlayerGold class, inherits base attributes from class Gold. Represents player gold amount. """
+    def __init__(self, amount: int):
+        super().__init__(amount)
+
+    def __str__(self):
+        return f"You have {super().__str__()}"
+    
+    def __repr__(self):
+        return f"{super().__repr__()}"
+
+class VendorGold(Gold):
+    """ VendorGold class, inherits base attributes from class Gold. Represents vendor gold amount. """
+    def __init__(self, amount: int):
+        super().__init__(amount)
+
+    def __str__(self):
+        return f"The vendor has {super().__str__()}"
+    
+    def __repr__(self):
+        return f"{super().__repr__()}"
 
 class Item:
+    """ Default class for all items. Items inherit all attributes and add their own. """
     def __init__(self, name: str, price: int, tier: int):
         self.name = name
         self.price = price
@@ -13,6 +47,7 @@ class Item:
         return f"'{self.name}', {self.price}, {self.tier}"
 
 class Armor(Item):
+    """ Armor item class, inherits base attributes from class Item and adds its own. """
     def __init__(self, name: str, price: int, tier: int, armor_rating: int):
         super().__init__(name, price, tier)
         self.armor_rating = armor_rating
@@ -24,6 +59,7 @@ class Armor(Item):
         return f"{super().__repr__()}, {self.armor_rating}"
 
 class Weapon(Item):
+    """ Weapon item class, inherits base attributes from class Item and adds its own. """
     def __init__(self, name: str, price: int, tier: int, min_dmg: int, max_dmg: int):
         super().__init__(name, price, tier)
         self.min_dmg = min_dmg
