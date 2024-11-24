@@ -1,4 +1,4 @@
-""" Reads through the .csv files with predefined items and creates respective vendor dictionaries. """
+""" Vendor inventory. Reads through the .csv files and creates respective dictionaries. Also sets initial vendor's gold. """
 
 import os
 import csv
@@ -7,6 +7,9 @@ import classes
 # default_path must be set to the directory where the .csv files are located
 default_path = r"C:\Users\boris\OneDrive\Documents\Projects\game-roguelike"
 os.chdir(default_path)
+
+# starting amount of vendor's gold
+vendor_gold = classes.Gold(100)
 
 vendor_armor = {}
 with open("armor.csv", newline="") as file:
