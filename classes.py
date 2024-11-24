@@ -3,35 +3,21 @@
 class Gold:
     """ Default class for gold. """
     def __init__(self, amount: int):
-        self.amount = amount
+        self.__amount = amount
 
     def __str__(self):
-        return f"{self.amount} gold in the inventory."
+        return f"There is {self.__amount} gold in the inventory."
     
     def __repr__(self):
-        return f"{self.amount}"
-
-class PlayerGold(Gold):
-    """ PlayerGold class, inherits base attributes from class Gold. Represents player gold amount. """
-    def __init__(self, amount: int):
-        super().__init__(amount)
-
-    def __str__(self):
-        return f"You have {super().__str__()}"
+        return f"{self.__amount}"
     
-    def __repr__(self):
-        return f"{super().__repr__()}"
-
-class VendorGold(Gold):
-    """ VendorGold class, inherits base attributes from class Gold. Represents vendor gold amount. """
-    def __init__(self, amount: int):
-        super().__init__(amount)
-
-    def __str__(self):
-        return f"The vendor has {super().__str__()}"
+    @property
+    def gold(self):
+        return self.__amount
     
-    def __repr__(self):
-        return f"{super().__repr__()}"
+    @gold.setter
+    def gold(self, amount):
+        self.__amount = amount
 
 class Item:
     """ Default class for all items. Items inherit all attributes and add their own. """
