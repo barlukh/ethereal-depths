@@ -14,6 +14,7 @@ Focus is put on practicing separating the code into different modules and import
 - Trading happens through the 'trade' module, which contains the main written user interface and calls relevant functions based on the player's input.
 - The input is protected, so if the player enters a wrong input, the programme doesn't raise an error, but rather reminds the player of only allowed inputs.
 - Module 'main' starts the code and the interaction.
+- IMPORTANT: Variable default_path in the 'vendor' module must be set to the directory where the .csv files are located on the computer.
 
 ## Installation
 No installation. It is a python file, so must be run in a Python interpreter or terminal. The programme starts automatically through the trade.trade() function in the 'main' module.
